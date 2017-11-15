@@ -1,0 +1,37 @@
+1.
+dinosaurs=# SELECT COUNT(id)
+dinosaurs-# FROM dinos;
+ count
+-------
+   331
+(1 row)
+
+2.
+dinosaurs=# SELECT * FROM dinos
+dinosaurs-# WHERE period= 'Jurassic';
+
+3.
+dinosaurs=# SELECT SUM(length)
+dinosaurs=# FROM dinos
+dinosaurs=# WHERE period='Cretaceous';
+
+4.
+dinosaurs=# SELECT * FROM dinos
+dinosaurs=# WHERE period='Jurassic' OR period='Cretaceous'
+dinosaurs=# ORDER BY species ASC;
+
+5.
+dinosaurs=# SELECT * FROM dinos
+dinosaurs=# WHERE t_order='Saurischia'
+dinosaurs=# AND diet='Herbivorous';
+
+6.
+dinosaurs=# UPDATE dinos
+dinosaurs=# SET name='Shortie'
+dinosaurs=# WHERE length=(
+dinosaurs=# SELECT MIN(length)
+dinosaurs=# FROM dinos);
+
+7.
+dinosaurs=# SELECT dinos FROM
+dinosaurs=# ORDER by ASC
